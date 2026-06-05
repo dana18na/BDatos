@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Práctica – Introducción a Bases de Datos</title>
+  <link rel="stylesheet" href="practica.css" />
+</head>
+<body>
+
+<div class="page">
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <a href="intro_bases_datos.html" class="back-btn">← Volver</a>
+    <span class="topbar-title">Práctica – Tema 1</span>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <span class="hero-tag">Zona de práctica</span>
+    <h1>Pon a prueba lo que aprendiste</h1>
+    <p>Completa las 3 dinámicas para terminar el tema.</p>
+    <div class="progress-wrap">
+      <div class="progress-track">
+        <div class="progress-fill" id="globalBar"></div>
+      </div>
+      <span class="progress-pct" id="globalPct">0%</span>
+    </div>
+    <div class="steps-row">
+      <div class="step" id="step-dot-0">1</div>
+      <div class="step-line"></div>
+      <div class="step" id="step-dot-1">2</div>
+      <div class="step-line"></div>
+      <div class="step" id="step-dot-2">3</div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- ══════════════════════════════════════════
+         DINÁMICA 1 – Opción múltiple
+    ══════════════════════════════════════════ -->
+    <div class="activity-card" id="act0">
+      <div class="act-header">
+        <span class="act-badge">Dinámica 1</span>
+        <span class="act-type">Selección múltiple</span>
+      </div>
+      <div class="lives-row" id="lives0">
+        <span class="heart">❤️</span><span class="heart">❤️</span><span class="heart">❤️</span>
+      </div>
+
+      <div class="question-block" id="q1">
+        <p class="question-text">¿Qué es una base de datos?</p>
+        <div class="options" id="opts1">
+          <button class="opt-btn" data-correct="false" onclick="checkMC(this,'opts1','fb1','act0',0)">Un programa para hacer presentaciones</button>
+          <button class="opt-btn" data-correct="true"  onclick="checkMC(this,'opts1','fb1','act0',0)">Un sistema para almacenar y gestionar información</button>
+          <button class="opt-btn" data-correct="false" onclick="checkMC(this,'opts1','fb1','act0',0)">Una red de computadoras conectadas</button>
+          <button class="opt-btn" data-correct="false" onclick="checkMC(this,'opts1','fb1','act0',0)">Un lenguaje de programación</button>
+        </div>
+        <div class="feedback" id="fb1"></div>
+      </div>
+
+      <div class="question-block hidden" id="q2">
+        <p class="question-text">¿Cuál es una ventaja de las bases de datos en la nube?</p>
+        <div class="options" id="opts2">
+          <button class="opt-btn" data-correct="false" onclick="checkMC(this,'opts2','fb2','act0',0)">Requieren hardware físico propio</button>
+          <button class="opt-btn" data-correct="false" onclick="checkMC(this,'opts2','fb2','act0',0)">Solo funcionan sin internet</button>
+          <button class="opt-btn" data-correct="true"  onclick="checkMC(this,'opts2','fb2','act0',0)">Alta disponibilidad y acceso 24/7</button>
+          <button class="opt-btn" data-correct="false" onclick="checkMC(this,'opts2','fb2','act0',0)">No permiten múltiples usuarios</button>
+        </div>
+        <div class="feedback" id="fb2"></div>
+      </div>
+
+      <div class="question-block hidden" id="q3">
+        <p class="question-text">¿Qué significa escalabilidad en bases de datos en la nube?</p>
+        <div class="options" id="opts3">
+          <button class="opt-btn" data-correct="false" onclick="checkMC(this,'opts3','fb3','act0',0)">Que los datos se borran automáticamente</button>
+          <button class="opt-btn" data-correct="true"  onclick="checkMC(this,'opts3','fb3','act0',0)">Poder aumentar o reducir capacidad según necesidad</button>
+          <button class="opt-btn" data-correct="false" onclick="checkMC(this,'opts3','fb3','act0',0)">Que solo una persona puede acceder</button>
+          <button class="opt-btn" data-correct="false" onclick="checkMC(this,'opts3','fb3','act0',0)">Que los datos se comparten públicamente</button>
+        </div>
+        <div class="feedback" id="fb3"></div>
+      </div>
+
+      <div class="act-success hidden" id="success0">
+        <span class="success-icon">🎉</span>
+        <p>¡Dinámica completada!</p>
+      </div>
+      <div class="act-failed hidden" id="failed0">
+        <span class="fail-icon">😔</span>
+        <p>Se acabaron las oportunidades. Continúa con la siguiente dinámica.</p>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         DINÁMICA 2 – Unir con líneas (click-click)
+    ══════════════════════════════════════════ -->
+    <div class="activity-card" id="act1">
+      <div class="act-header">
+        <span class="act-badge">Dinámica 2</span>
+        <span class="act-type">Une cada concepto con su definición</span>
+      </div>
+      <div class="lives-row" id="lives1">
+        <span class="heart">❤️</span><span class="heart">❤️</span><span class="heart">❤️</span>
+      </div>
+      <p class="match-hint">Toca un concepto y luego su definición para conectarlos.</p>
+
+      <div class="match-area">
+        <div class="match-col" id="leftCol">
+          <div class="match-item left-item" data-id="a" onclick="selectLeft(this)">Escalabilidad</div>
+          <div class="match-item left-item" data-id="b" onclick="selectLeft(this)">Cifrado</div>
+          <div class="match-item left-item" data-id="c" onclick="selectLeft(this)">Alta disponibilidad</div>
+          <div class="match-item left-item" data-id="d" onclick="selectLeft(this)">Base de datos</div>
+        </div>
+        <div class="match-col" id="rightCol">
+          <div class="match-item right-item" data-id="c" onclick="selectRight(this)">Acceso 24/7 desde cualquier dispositivo</div>
+          <div class="match-item right-item" data-id="a" onclick="selectRight(this)">Ajustar capacidad según la demanda</div>
+          <div class="match-item right-item" data-id="d" onclick="selectRight(this)">Sistema organizado para gestionar datos</div>
+          <div class="match-item right-item" data-id="b" onclick="selectRight(this)">Protección de datos con claves secretas</div>
+        </div>
+      </div>
+      <div class="feedback" id="fb-match"></div>
+      <div class="match-pairs" id="matchPairs"></div>
+
+      <div class="act-success hidden" id="success1">
+        <span class="success-icon">🎉</span>
+        <p>¡Dinámica completada!</p>
+      </div>
+      <div class="act-failed hidden" id="failed1">
+        <span class="fail-icon">😔</span>
+        <p>Se acabaron las oportunidades. Continúa con la siguiente dinámica.</p>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         DINÁMICA 3 – Completar el espacio
+    ══════════════════════════════════════════ -->
+    <div class="activity-card" id="act2">
+      <div class="act-header">
+        <span class="act-badge">Dinámica 3</span>
+        <span class="act-type">Completa el espacio</span>
+      </div>
+      <div class="lives-row" id="lives2">
+        <span class="heart">❤️</span><span class="heart">❤️</span><span class="heart">❤️</span>
+      </div>
+
+      <div class="fill-block" id="fill-q1">
+        <p class="question-text">Las bases de datos en la nube eliminan la necesidad de <span class="blank-word">____________</span> físico propio.</p>
+        <div class="fill-options" id="fill-opts1">
+          <button class="fill-btn" data-correct="false" onclick="checkFill(this,'fill-opts1','fill-fb1','act2',2)">software</button>
+          <button class="fill-btn" data-correct="true"  onclick="checkFill(this,'fill-opts1','fill-fb1','act2',2)">hardware</button>
+          <button class="fill-btn" data-correct="false" onclick="checkFill(this,'fill-opts1','fill-fb1','act2',2)">internet</button>
+        </div>
+        <div class="feedback" id="fill-fb1"></div>
+      </div>
+
+      <div class="fill-block hidden" id="fill-q2">
+        <p class="question-text">Una base de datos permite que <span class="blank-word">____________</span> usuarios accedan a los datos de forma simultánea.</p>
+        <div class="fill-options" id="fill-opts2">
+          <button class="fill-btn" data-correct="false" onclick="checkFill(this,'fill-opts2','fill-fb2','act2',2)">ningún</button>
+          <button class="fill-btn" data-correct="false" onclick="checkFill(this,'fill-opts2','fill-fb2','act2',2)">un solo</button>
+          <button class="fill-btn" data-correct="true"  onclick="checkFill(this,'fill-opts2','fill-fb2','act2',2)">múltiples</button>
+        </div>
+        <div class="feedback" id="fill-fb2"></div>
+      </div>
+
+      <div class="fill-block hidden" id="fill-q3">
+        <p class="question-text">La <span class="blank-word">____________</span> es la característica que permite crecer o reducir la capacidad de almacenamiento.</p>
+        <div class="fill-options" id="fill-opts3">
+          <button class="fill-btn" data-correct="false" onclick="checkFill(this,'fill-opts3','fill-fb3','act2',2)">disponibilidad</button>
+          <button class="fill-btn" data-correct="false" onclick="checkFill(this,'fill-opts3','fill-fb3','act2',2)">seguridad</button>
+          <button class="fill-btn" data-correct="true"  onclick="checkFill(this,'fill-opts3','fill-fb3','act2',2)">escalabilidad</button>
+        </div>
+        <div class="feedback" id="fill-fb3"></div>
+      </div>
+
+      <div class="act-success hidden" id="success2">
+        <span class="success-icon">🎉</span>
+        <p>¡Dinámica completada!</p>
+      </div>
+      <div class="act-failed hidden" id="failed2">
+        <span class="fail-icon">😔</span>
+        <p>Se acabaron las oportunidades.</p>
+      </div>
+    </div>
+
+    <!-- RESULTADO FINAL -->
+    <div class="final-card hidden" id="finalCard">
+      <div class="final-icon" id="finalIcon">🏆</div>
+      <h2 id="finalTitle">¡Práctica terminada!</h2>
+      <p id="finalMsg">Completaste todas las dinámicas.</p>
+      <p class="final-score-label">Calificación final: <span id="finalScore">0%</span></p>
+      <div class="final-btns">
+        <button class="retry-all-btn" onclick="retryAll()">🔄 Volver a intentarlo</button>
+        <a href="introduccion.html" class="back-topic-btn">← Volver al tema</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // ── Estado global ──
+  let actCompleted = [false, false, false];
+  let actLives     = [3, 3, 3];
+  let actScores    = [0, 0, 0];
+
+  // ── Progress bar global ──
+  function updateProgress() {
+    const total = actScores.reduce((a, b) => a + b, 0) / 3;
+    document.getElementById('globalBar').style.width = total + '%';
+    document.getElementById('globalPct').textContent = Math.round(total) + '%';
+    [0,1,2].forEach(i => {
+      const dot = document.getElementById('step-dot-' + i);
+      if (actCompleted[i]) dot.classList.add('done');
+      else dot.classList.remove('done');
+    });
+    if (actCompleted[0] && actCompleted[1] && actCompleted[2]) {
+      const pct = Math.round(total);
+      document.getElementById('finalScore').textContent = pct + '%';
+      document.getElementById('finalIcon').textContent = pct >= 70 ? '🏆' : '📚';
+      document.getElementById('finalTitle').textContent = pct >= 70 ? '¡Práctica terminada!' : 'Puedes mejorar';
+      document.getElementById('finalMsg').textContent = pct >= 70
+        ? 'Excelente trabajo. Dominaste el tema.'
+        : 'No te rindas, inténtalo de nuevo para mejorar tu calificación.';
+      document.getElementById('finalCard').classList.remove('hidden');
+    }
+  }
+
+  function showScore(actIdx, score) {
+    document.querySelectorAll('#score' + actIdx).forEach(el => el.textContent = score + '%');
+  }
+
+  function loseLife(actIdx) {
+    actLives[actIdx]--;
+    const hearts = document.querySelectorAll('#lives' + actIdx + ' .heart');
+    if (hearts[actLives[actIdx]]) {
+      hearts[actLives[actIdx]].style.filter = 'grayscale(1)';
+      hearts[actLives[actIdx]].style.opacity = '0.4';
+    }
+    return actLives[actIdx];
+  }
+
+  function disableOptions(containerId) {
+    document.querySelectorAll('#' + containerId + ' button').forEach(b => b.disabled = true);
+  }
+
+  // ── Reintentar dinámica ──
+  function retryAct(actIdx) {
+    actCompleted[actIdx] = false;
+    actLives[actIdx] = 3;
+    actScores[actIdx] = 0;
+
+    // Restaurar corazones
+    document.querySelectorAll('#lives' + actIdx + ' .heart').forEach(h => {
+      h.style.filter = ''; h.style.opacity = '';
+    });
+
+    // Ocultar resultado
+    document.getElementById('failed' + actIdx).classList.add('hidden');
+    document.getElementById('success' + actIdx).classList.add('hidden');
+
+    if (actIdx === 0) {
+      mc_current = 1; mc_correct = 0;
+      ['q1','q2','q3'].forEach((id,i) => {
+        const el = document.getElementById(id);
+        if (i === 0) el.classList.remove('hidden'); else el.classList.add('hidden');
+        el.querySelectorAll('button').forEach(b => { b.disabled = false; b.classList.remove('correct','wrong'); });
+        document.getElementById('fb' + (i+1)).textContent = '';
+        document.getElementById('fb' + (i+1)).className = 'feedback';
+      });
+    } else if (actIdx === 1) {
+      matchedPairs = 0; selectedLeft = null;
+      document.querySelectorAll('.left-item, .right-item').forEach(el => {
+        el.classList.remove('matched','selected','wrong-shake');
+        el.style.pointerEvents = '';
+      });
+      document.getElementById('matchPairs').innerHTML = '';
+      document.getElementById('fb-match').textContent = '';
+      document.getElementById('fb-match').className = 'feedback';
+    } else if (actIdx === 2) {
+      fill_current = 1; fill_correct = 0;
+      ['fill-q1','fill-q2','fill-q3'].forEach((id,i) => {
+        const el = document.getElementById(id);
+        if (i === 0) el.classList.remove('hidden'); else el.classList.add('hidden');
+        el.querySelectorAll('button').forEach(b => { b.disabled = false; b.classList.remove('correct','wrong'); });
+        const fb = el.querySelector('.feedback');
+        if (fb) { fb.textContent = ''; fb.className = 'feedback'; }
+      });
+    }
+    updateProgress();
+  }
+
+  function retryAll() {
+    // Reset estado
+    actCompleted = [false, false, false];
+    actLives = [3, 3, 3];
+    actScores = [0, 0, 0];
+    mc_current = 1; mc_correct = 0;
+    fill_current = 1; fill_correct = 0;
+    matchedPairs = 0; selectedLeft = null;
+
+    // Ocultar tarjeta final
+    document.getElementById('finalCard').classList.add('hidden');
+
+    // Reiniciar cada actividad
+    [0, 1, 2].forEach(i => retryAct(i));
+    updateProgress();
+  }
+
+  // ══════════════════════════════════════
+  // DINÁMICA 1 – Opción múltiple
+  // ══════════════════════════════════════
+  const mc_q = [null, 'q1', 'q2', 'q3'];
+  let mc_current = 1;
+  let mc_correct = 0;
+
+  const fill_q = [null, 'fill-q1', 'fill-q2', 'fill-q3'];
+  let fill_current = 1;
+  let fill_correct = 0;
+
+  function checkMC(btn, optsId, fbId, actId, actIdx) {
+    if (actCompleted[actIdx] || actLives[actIdx] === 0) return;
+    const fb = document.getElementById(fbId);
+    disableOptions(optsId);
+
+    if (btn.dataset.correct === 'true') {
+      btn.classList.add('correct');
+      fb.textContent = '✓ ¡Correcto!';
+      fb.className = 'feedback ok';
+      mc_correct++;
+      setTimeout(() => {
+        fb.textContent = ''; fb.className = 'feedback';
+        mc_current++;
+        if (mc_current <= 3) {
+          document.getElementById(mc_q[mc_current]).classList.remove('hidden');
+        } else {
+          const sc = Math.round((mc_correct / 3) * 100);
+          actScores[actIdx] = sc;
+          actCompleted[actIdx] = true;
+          showScore(actIdx, sc);
+          document.getElementById('success' + actIdx).classList.remove('hidden');
+          updateProgress();
+        }
+      }, 900);
+    } else {
+      btn.classList.add('wrong');
+      fb.textContent = '✗ Incorrecto. Intenta de nuevo.';
+      fb.className = 'feedback err';
+      const remaining = loseLife(actIdx);
+      if (remaining === 0) {
+        setTimeout(() => {
+          const sc = Math.round((mc_correct / 3) * 100);
+          actScores[actIdx] = sc;
+          actCompleted[actIdx] = true;
+          showScore(actIdx, sc);
+          document.getElementById('failed' + actIdx).classList.remove('hidden');
+          setTimeout(() => updateProgress(), 600);
+        }, 900);
+      } else {
+        setTimeout(() => {
+          document.querySelectorAll('#' + optsId + ' button').forEach(b => { b.disabled = false; b.classList.remove('wrong'); });
+          fb.textContent = ''; fb.className = 'feedback';
+        }, 900);
+      }
+    }
+  }
+
+  function checkFill(btn, optsId, fbId, actId, actIdx) {
+    if (actCompleted[actIdx] || actLives[actIdx] === 0) return;
+    const fb = document.getElementById(fbId);
+    disableOptions(optsId);
+
+    if (btn.dataset.correct === 'true') {
+      btn.classList.add('correct');
+      fb.textContent = '✓ ¡Correcto!';
+      fb.className = 'feedback ok';
+      fill_correct++;
+      setTimeout(() => {
+        fb.textContent = ''; fb.className = 'feedback';
+        fill_current++;
+        if (fill_current <= 3) {
+          document.getElementById(fill_q[fill_current]).classList.remove('hidden');
+        } else {
+          const sc = Math.round((fill_correct / 3) * 100);
+          actScores[actIdx] = sc;
+          actCompleted[actIdx] = true;
+          showScore(actIdx, sc);
+          document.getElementById('success' + actIdx).classList.remove('hidden');
+          updateProgress();
+        }
+      }, 900);
+    } else {
+      btn.classList.add('wrong');
+      fb.textContent = '✗ Incorrecto. Intenta de nuevo.';
+      fb.className = 'feedback err';
+      const remaining = loseLife(actIdx);
+      if (remaining === 0) {
+        setTimeout(() => {
+          const sc = Math.round((fill_correct / 3) * 100);
+          actScores[actIdx] = sc;
+          actCompleted[actIdx] = true;
+          showScore(actIdx, sc);
+          document.getElementById('failed' + actIdx).classList.remove('hidden');
+          setTimeout(() => updateProgress(), 600);
+        }, 900);
+      } else {
+        setTimeout(() => {
+          document.querySelectorAll('#' + optsId + ' button').forEach(b => { b.disabled = false; b.classList.remove('wrong'); });
+          fb.textContent = ''; fb.className = 'feedback';
+        }, 900);
+      }
+    }
+  }
+
+  // ══════════════════════════════════════
+  // DINÁMICA 2 – Unir conceptos
+  // ══════════════════════════════════════
+  let selectedLeft  = null;
+  let matchedPairs  = 0;
+  const totalPairs  = 4;
+  const matchActIdx = 1;
+
+  function selectLeft(el) {
+    if (actCompleted[matchActIdx] || actLives[matchActIdx] === 0) return;
+    if (el.classList.contains('matched')) return;
+    document.querySelectorAll('.left-item').forEach(i => i.classList.remove('selected'));
+    el.classList.add('selected');
+    selectedLeft = el;
+  }
+
+  function selectRight(el) {
+    if (!selectedLeft) return;
+    if (actCompleted[matchActIdx] || actLives[matchActIdx] === 0) return;
+    if (el.classList.contains('matched')) return;
+
+    const fb = document.getElementById('fb-match');
+
+    if (selectedLeft.dataset.id === el.dataset.id) {
+      selectedLeft.classList.remove('selected');
+      selectedLeft.classList.add('matched');
+      el.classList.add('matched');
+
+      const pair = document.createElement('div');
+      pair.className = 'pair-line ok';
+      pair.textContent = selectedLeft.textContent + '  →  ' + el.textContent;
+      document.getElementById('matchPairs').appendChild(pair);
+
+      fb.textContent = '✓ ¡Correcto!';
+      fb.className = 'feedback ok';
+      selectedLeft = null;
+      matchedPairs++;
+
+      if (matchedPairs === totalPairs) {
+        actScores[matchActIdx] = 100;
+        actCompleted[matchActIdx] = true;
+        showScore(matchActIdx, 100);
+        setTimeout(() => {
+          document.getElementById('success1').classList.remove('hidden');
+          updateProgress();
+        }, 600);
+      } else {
+        setTimeout(() => { fb.textContent = ''; fb.className = 'feedback'; }, 800);
+      }
+    } else {
+      selectedLeft.classList.add('wrong-shake');
+      el.classList.add('wrong-shake');
+      fb.textContent = '✗ Esa combinación no es correcta.';
+      fb.className = 'feedback err';
+
+      const remaining = loseLife(matchActIdx);
+
+      setTimeout(() => {
+        selectedLeft.classList.remove('wrong-shake', 'selected');
+        el.classList.remove('wrong-shake');
+        selectedLeft = null;
+        fb.textContent = ''; fb.className = 'feedback';
+
+        if (remaining === 0) {
+          const sc = Math.round((matchedPairs / totalPairs) * 100);
+          actScores[matchActIdx] = sc;
+          actCompleted[matchActIdx] = true;
+          showScore(matchActIdx, sc);
+          document.querySelectorAll('.left-item, .right-item').forEach(i => i.style.pointerEvents = 'none');
+          document.getElementById('failed1').classList.remove('hidden');
+          setTimeout(() => updateProgress(), 600);
+        }
+      }, 900);
+    }
+  }
+</script>
+
+</body>
+</html>
